@@ -1,16 +1,22 @@
-# React + Vite
+# 🛡️ CyberShield
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**Power BI-Inspired Business Intelligence Dashboard for Cybersecurity**
 
-Currently, two official plugins are available:
+CyberShield is a full-stack Data Analytics platform designed to analyze, visualize, and interact with cybersecurity incident data. It features a professional "Midnight Aurora" dark theme and provides deep insights into threat intelligence through dynamic charts and cross-filtering.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
+- **Executive Overview:** KPI cards, Monthly Incident Trends (Line Chart), Severity Distribution (Doughnut Chart).
+- **Attack Intelligence:** Top Attack Categories (Bar Chart), Stacked Severity Breakdown.
+- **Geographical Analysis:** Country-wise incident distribution and Regional analysis.
+- **Trend & Risk:** Weekday attack frequency and Severity trends over time.
+- **Incident Explorer:** Searchable, paginated data table with advanced filtering (Severity, Country) and **CSV Export** functionality.
 
-## React Compiler
+## 💻 Tech Stack
+- **Frontend:** React.js, Vite, Tailwind CSS, Chart.js, React-Chartjs-2, Lucide React
+- **Backend:** Node.js, Express.js
+- **Database:** MySQL (Star Schema Data Model)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## 📊 Database Architecture
+This project uses a standard **Star Schema** data model in MySQL:
+- **FactIncidents:** The central fact table containing incident records.
+- **DimDate, DimGeography, DimAttackType, DimSeverity, DimTargetSystem:** Dimension tables connected via foreign keys for analytical querying.
